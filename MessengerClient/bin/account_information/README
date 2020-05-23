@@ -1,0 +1,14 @@
+In this package we distinguish two types of classes:
+ 1) Usable classes
+ 2) Stringifiable classes
+ 
+"Usable classes" contain fields with the most convenient types. For example, a public key has type 
+PublicKey. However, in order to write objects to disk or send them in a message we introduce 
+"stringifiable classes". As the name implies, objects of these classes can easily be stringified. 
+In our case, we use Gson to convert objects into the Json format. In order for this to be possible
+all fields must be initializable using the default constructor. Therefore, we change the types of 
+some fields. For instance, we convert the public key to a String and store it as such.
+ 
+Stringifiable classes are only used for reading/writing objects from/to disk and sending messages.
+For example, when we load an account from disk, we first create a StringifiableAccount object and 
+subsequently use this to create a (regular) Account object.
