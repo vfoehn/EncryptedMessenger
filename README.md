@@ -19,7 +19,7 @@ running on a Raspberry Pi that allowed messenger clients to communicate.
     - RSA encryption
     - Password-based encryption
     - KeyStore
-- MySQL
+- MySQL (accessed using JDBC)
 - Apache Tomcat
 
 
